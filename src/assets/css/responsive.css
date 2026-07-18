@@ -1,0 +1,317 @@
+/* ==========================================
+            RESPONSIVE DESIGN
+========================================== */
+
+/* ---------- Large Devices ---------- */
+
+@media (max-width:1200px){
+
+.container{
+    max-width:1140px;
+}
+
+.hero h1{
+    font-size:52px;
+}
+
+.section-title h2{
+    font-size:38px;
+}
+
+}
+
+/* ---------- Laptop ---------- */
+
+@media (max-width:992px){
+
+.section{
+    padding:70px 0;
+}
+
+.container{
+    max-width:960px;
+}
+
+h1{
+    font-size:42px;
+}
+
+h2{
+    font-size:34px;
+}
+
+h3{
+    font-size:28px;
+}
+
+.hero{
+    text-align:center;
+    padding:90px 0;
+}
+
+.hero-buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.hero-image{
+    margin-top:60px;
+}
+
+.jobs-sidebar{
+    position:static;
+    margin-bottom:30px;
+}
+
+.dashboard-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+}
+
+.footer{
+    text-align:center;
+}
+
+.footer-social{
+    justify-content:center;
+}
+
+.footer-bottom-links{
+    justify-content:center;
+    margin-top:20px;
+}
+
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width:768px){
+
+.section{
+    padding:60px 0;
+}
+
+.container{
+    padding-left:20px;
+    padding-right:20px;
+}
+
+h1{
+    font-size:36px;
+}
+
+h2{
+    font-size:30px;
+}
+
+h3{
+    font-size:26px;
+}
+
+h4{
+    font-size:22px;
+}
+
+p{
+    font-size:17px;
+}
+
+.hero-search{
+    flex-direction:column;
+}
+
+.hero-search .btn{
+    width:100%;
+}
+
+.custom-card{
+    padding:25px;
+}
+
+.job-card{
+    padding:25px;
+}
+
+.job-details-card{
+    padding:30px;
+}
+
+.auth-right{
+    padding:40px 30px;
+}
+
+.dashboard-table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+}
+
+.summary-card{
+    margin-bottom:25px;
+}
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:576px){
+
+body{
+    font-size:16px;
+}
+
+.section{
+    padding:50px 0;
+}
+
+.container{
+    padding-left:16px;
+    padding-right:16px;
+}
+
+h1{
+    font-size:32px;
+}
+
+h2{
+    font-size:28px;
+}
+
+h3{
+    font-size:24px;
+}
+
+h4{
+    font-size:20px;
+}
+
+h5{
+    font-size:18px;
+}
+
+p{
+    font-size:16px;
+}
+
+.navbar-brand{
+    font-size:28px;
+}
+
+.hero{
+    padding:70px 0;
+}
+
+.hero h1{
+    font-size:34px;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.hero-buttons .btn{
+    width:100%;
+}
+
+.btn-primary-custom,
+.btn-outline-custom{
+    width:100%;
+    text-align:center;
+}
+
+.jobs-header h1{
+    font-size:32px;
+}
+
+.job-title{
+    font-size:22px;
+}
+
+.company-name{
+    font-size:18px;
+}
+
+.job-meta{
+    gap:10px;
+}
+
+.job-meta span{
+    font-size:14px;
+}
+
+.job-footer{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+}
+
+.job-details-card h1{
+    font-size:28px;
+}
+
+.auth-title{
+    font-size:28px;
+}
+
+.auth-card{
+    border-radius:20px;
+}
+
+.dashboard-title h1{
+    font-size:28px;
+}
+
+.profile-avatar{
+    width:90px;
+    height:90px;
+    font-size:32px;
+}
+
+.footer-brand{
+    font-size:28px;
+}
+
+.footer-title{
+    font-size:20px;
+}
+
+}
+
+/* ---------- Small Mobile ---------- */
+
+@media (max-width:400px){
+
+h1{
+    font-size:28px;
+}
+
+.hero h1{
+    font-size:30px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.btn-primary-custom,
+.btn-outline-custom{
+    padding:14px 20px;
+    font-size:16px;
+}
+
+.form-control{
+    font-size:16px;
+}
+
+.custom-card,
+.job-card,
+.dashboard-card{
+    padding:20px;
+}
+
+}

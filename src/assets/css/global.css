@@ -1,0 +1,355 @@
+/* ==========================================
+   CAREERPILOT - GLOBAL DESIGN SYSTEM
+========================================== */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+
+    /* Colors */
+    --primary:#2563EB;
+    --primary-dark:#1D4ED8;
+    --secondary:#4F46E5;
+    --success:#16A34A;
+    --danger:#DC2626;
+    --warning:#F59E0B;
+
+    --background:#F8FAFC;
+    --white:#FFFFFF;
+
+    --heading:#111827;
+    --text:#374151;
+    --muted:#6B7280;
+
+    --border:#E5E7EB;
+
+    --shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    --radius:20px;
+
+}
+
+/* ==========================
+        RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:
+    radial-gradient(circle at top left,#EEF4FF 0%,transparent 35%),
+    radial-gradient(circle at top right,#F3EEFF 0%,transparent 30%),
+    linear-gradient(180deg,#F8FAFC 0%,#F5F7FB 100%);
+
+    background-attachment:fixed;
+
+    color:var(--text);
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+img{
+    max-width:100%;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+button{
+    border:none;
+    outline:none;
+}
+
+input,
+textarea,
+select{
+    outline:none;
+}
+
+/* ==========================
+      TYPOGRAPHY
+========================== */
+
+h1{
+    font-size:48px;
+    font-weight:800;
+    color:var(--heading);
+    line-height:1.2;
+}
+
+h2{
+    font-size:38px;
+    font-weight:700;
+    color:var(--heading);
+}
+
+h3{
+    font-size:30px;
+    font-weight:700;
+    color:var(--heading);
+}
+
+h4{
+    font-size:24px;
+    font-weight:700;
+    color:var(--heading);
+}
+
+h5{
+    font-size:20px;
+    font-weight:600;
+}
+
+h6{
+    font-size:18px;
+    font-weight:600;
+}
+
+p{
+    font-size:18px;
+    color:var(--text);
+    margin-bottom:15px;
+}
+
+/* ==========================
+        SECTION
+========================== */
+
+.section{
+    padding:90px 0;
+}
+
+/* ==========================
+        BUTTONS
+========================== */
+
+.btn-primary-custom{
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary));
+
+    color:#fff;
+
+    padding:14px 34px;
+
+    border-radius:14px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    display:inline-block;
+
+}
+
+.btn-primary-custom:hover{
+
+    transform:translateY(-3px);
+
+    color:#fff;
+
+    box-shadow:var(--shadow);
+
+}
+
+.btn-outline-custom{
+
+    background:#fff;
+
+    color:var(--primary);
+
+    border:2px solid var(--primary);
+
+    padding:14px 34px;
+
+    border-radius:14px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-outline-custom:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+/* ==========================
+        INPUTS
+========================== */
+
+.form-control{
+
+    height:58px;
+
+    border-radius:14px;
+
+    border:1px solid var(--border);
+
+    font-size:17px;
+
+    padding:0 20px;
+
+    box-shadow:none;
+
+}
+
+.form-control:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:none;
+
+}
+
+/* ==========================
+          CARD
+========================== */
+
+.custom-card{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.6);
+
+    border-radius:24px;
+
+    padding:32px;
+
+    transition:.35s ease;
+
+    box-shadow:
+    0 10px 30px rgba(15,23,42,.08);
+
+}
+
+.custom-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 20px 45px rgba(37,99,235,.15);
+
+}
+
+/* ==========================
+        BADGES
+========================== */
+
+.badge-custom{
+
+    display:inline-block;
+
+    background:#E8F0FE;
+
+    color:var(--primary);
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+/* ==========================
+        UTILITIES
+========================== */
+
+.text-muted-custom{
+    color:var(--muted);
+}
+
+.text-primary-custom{
+    color:var(--primary);
+}
+
+.bg-white-custom{
+    background:#fff;
+}
+
+.rounded-custom{
+    border-radius:22px;
+}
+
+.shadow-custom{
+    box-shadow:var(--shadow);
+}
+
+.mt-80{
+    margin-top:80px;
+}
+
+.mb-80{
+    margin-bottom:80px;
+}
+
+.py-100{
+    padding:100px 0;
+}
+
+.container{
+    max-width:1320px;
+}
+
+/* ==========================================
+        GLOBAL BACKGROUND DECORATION
+========================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at 15% 20%,rgba(37,99,235,.08),transparent 18%),
+    radial-gradient(circle at 85% 15%,rgba(79,70,229,.08),transparent 18%),
+    radial-gradient(circle at 50% 85%,rgba(37,99,235,.05),transparent 22%);
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
