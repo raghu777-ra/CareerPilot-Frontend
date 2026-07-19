@@ -139,3 +139,92 @@ https://github.com/raghu777-ra
 ## 📄 License
 
 This project is created for learning, portfolio, and interview demonstration purposes.
+
+┌──────────────────────┐
+│   React + Vite UI    │
+└──────────┬───────────┘
+           │
+           │ HTTP Request (Axios)
+           ▼
+┌──────────────────────┐
+│ Spring Boot REST API │
+│     Controllers      │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│    Service Layer     │
+│   Business Logic     │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│ Spring Data JPA      │
+│   Repository Layer   │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│    MySQL Database    │
+└──────────────────────┘
+
+┌──────────────────────┐
+│    MySQL Database    │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│ Spring Data JPA      │
+│   Repository Layer   │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│    Service Layer     │
+│   Business Logic     │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│ Spring Boot REST API │
+│     Controllers      │
+└──────────┬───────────┘
+           │
+           │ JSON Response
+           ▼
+┌──────────────────────┐
+│   React + Vite UI    │
+└──────────────────────┘
+
+                 REQUEST
+React UI
+   │
+   ▼
+Axios
+   │
+   ▼
+Spring Boot Controller
+   │
+   ▼
+Service Layer
+   │
+   ▼
+JPA Repository
+   │
+   ▼
+MySQL Database
+   ▲
+   │
+JPA Repository
+   ▲
+   │
+Service Layer
+   ▲
+   │
+Spring Boot Controller
+   ▲
+   │
+JSON Response
+   ▲
+React UI
+                RESPONSE

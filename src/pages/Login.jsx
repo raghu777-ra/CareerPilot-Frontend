@@ -13,6 +13,10 @@ function Login() {
     password: ""
   });
 
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
 
     setFormData({
@@ -26,34 +30,51 @@ function Login() {
 
     e.preventDefault();
 
+    setMessage("");
+    setLoading(true);
+
     try {
 
       const response = await login(formData);
 
-      console.log("Login Response:", response);
+      setMessage("Login successful!");
+      setMessageType("success");
 
       loginUser(response);
 
-      console.log("Role:", response.role);
+      setTimeout(() => {
 
-      if (response.role === "ADMIN") {
+        if (response.role === "ADMIN") {
 
-        navigate("/admin-dashboard");
+          navigate("/admin-dashboard");
 
-      } else if (response.role === "RECRUITER") {
+        } else if (response.role === "RECRUITER") {
 
-        navigate("/recruiter-dashboard");
+          navigate("/recruiter-dashboard");
 
-      } else {
+        } else {
 
-        navigate("/dashboard");
+          navigate("/dashboard");
 
-      }
+        }
+
+      }, 800);
 
     } catch (error) {
 
-      alert("Invalid email or password.");
+      const backendMessage =
+        error.response?.data?.message ||
+        error.response?.data?.error ||
+        "Invalid email or password.";
+
+      setMessage(backendMessage);
+      setMessageType("danger");
+
       console.error(error);
+
+    } finally {
+
+      setLoading(false);
 
     }
 
@@ -117,6 +138,12 @@ function Login() {
                       Sign in to your account
                     </p>
 
+                    {message && (
+                      <div className={`alert alert-${messageType}`}>
+                        {message}
+                      </div>
+                    )}
+
                     <form
                       className="auth-form"
                       onSubmit={handleSubmit}
@@ -155,8 +182,9 @@ function Login() {
                       <button
                         className="auth-btn"
                         type="submit"
+                        disabled={loading}
                       >
-                        Login
+                        {loading ? "Logging in..." : "Login"}
                       </button>
 
                     </form>

@@ -14,6 +14,9 @@ function Register() {
     role: "CANDIDATE"
   });
 
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("");
+
   const handleChange = (e) => {
 
     setFormData({
@@ -23,29 +26,38 @@ function Register() {
 
   };
 
- const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
 
-  e.preventDefault();
+    e.preventDefault();
 
-  console.log(formData);
+    setMessage("");
 
-  try {
+    try {
 
-    await register(formData);
+      await register(formData);
 
-    alert("Registration successful.");
+      setMessage("Registration successful. Redirecting to login...");
+      setMessageType("success");
 
-    navigate("/login");
+      setTimeout(() => {
+        navigate("/login");
+      }, 1500);
 
-  } catch (error) {
+    } catch (error) {
 
-    alert("Registration failed.");
+      const backendMessage =
+        error.response?.data?.message ||
+        error.response?.data?.error ||
+        "Registration failed.";
 
-    console.error(error);
+      setMessage(backendMessage);
+      setMessageType("danger");
 
-  }
+      console.error(error);
 
-};
+    }
+
+  };
 
   return (
 
@@ -105,6 +117,12 @@ function Register() {
                       Register to get started
                     </p>
 
+                    {message && (
+                      <div className={`alert alert-${messageType}`}>
+                        {message}
+                      </div>
+                    )}
+
                     <form
                       className="auth-form"
                       onSubmit={handleSubmit}
@@ -157,19 +175,19 @@ function Register() {
 
                       <div className="form-group">
 
-                          <label>Register As</label>
+                        <label>Register As</label>
 
-                          <select
-                            className="form-control"
-                            name="role"
-                            value={formData.role}
-                            onChange={handleChange}
-                          >
-                            <option value="CANDIDATE">Candidate</option>
-                            <option value="RECRUITER">Recruiter</option>
-                          </select>
+                        <select
+                          className="form-control"
+                          name="role"
+                          value={formData.role}
+                          onChange={handleChange}
+                        >
+                          <option value="CANDIDATE">Candidate</option>
+                          <option value="RECRUITER">Recruiter</option>
+                        </select>
 
-                        </div>
+                      </div>
 
                       <div className="form-group">
 
